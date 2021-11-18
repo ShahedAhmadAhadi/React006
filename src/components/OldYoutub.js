@@ -33,17 +33,17 @@ function OldYoutube() {
             <form onSubmit={formik.handleSubmit}>
                 <div className="form-control">
                     <label htmlFor="name">Name</label>
-                    <input type="text" name="name" id="name" onChange={formik.handleChange} value={formik.values.name} onBlur={formik.handleBlur} />
+                    <input type="text" name="name" id="name" {...formik.getFieldProps('name')} />
                     {formik.touched.name && formik.errors.name && <div className="error">{formik.errors.name}</div>}
                 </div>
                 <div className="form-control">
                 <label htmlFor="email">E-mail</label>
-                <input type="email" name="email" id="email" onChange={formik.handleChange} value={formik.values.email} onBlur={formik.handleBlur} />
+                <input type="email" name="email" id="email" {...formik.getFieldProps('email')} />
                 {formik.touched.email && formik.errors.email && <div className="error">{formik.errors.email}</div>}
                 </div>
                 <div className="form-control">
                 <label htmlFor="channel">Channel</label>
-                <input type="text" name="channel" id="channel" onChange={formik.handleChange} value={formik.values.channel} onBlur={formik.handleBlur} />
+                <input type="text" name="channel" id="channel" {...formik.getFieldProps('channel')} />
                 {formik.touched.channel && formik.errors.channel && <div className="error">{formik.errors.channel}</div>}
                 </div>
                 <button type="submit">Submit</button>
