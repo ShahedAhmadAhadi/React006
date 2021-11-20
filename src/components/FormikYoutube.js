@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Formik, Form, Field, ErrorMessage, FieldArray } from 'formik'
 import * as Yup from 'yup'
 import TextError from './TextError'
@@ -11,8 +11,18 @@ const initialValues = {
     phoneNumbers: ['', ''],
     phNumbers: ['']
 }
-const onSubmit = values => {
+const savedValues = {
+    name: 'Shahed',
+    email: 'shahed@gmail.com',
+    channel: 'yt-coding',
+    comment: 'good channel',
+    phoneNumbers: ['093', '080928172'],
+    phNumbers: ['12823', '12734']
+}
+const onSubmit = (values, onSubmitProps) => {
     console.log(values)
+    console.log(onSubmitProps)
+    onSubmitProps.resetForm()
 }
 
 const validationSchema = Yup.object({
@@ -31,8 +41,10 @@ const validateComments = value => {
 
 function FormikYoutube() {
 
+    const [formValues, setFormValues] = useState(null)
+
     return (
-        <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit} validateOnChange={false}>
+        <Formik initialValues={formValues || initialValues} validationSchema={validationSchema} onSubmit={onSubmit} validateOnChange={false} enableReinitialize>
             {
                 formik => {
                     return (
@@ -91,7 +103,8 @@ function FormikYoutube() {
                     }
                 </FieldArray>
                 <button type="button" onClick={() => formik.setTouched({name: true, channel: true, email: true, comment: true})}>validate</button>
-                <button type="submit">Submit</button>
+                <button type="button" onClick={() => setFormValues(savedValues)}>data</button>
+                <button type="submit" disabled={!formik.isValid || formik.isSubmitting}>Submit</button>
             </Form>
                     )
                 }
