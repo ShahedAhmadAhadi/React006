@@ -3,6 +3,7 @@ import Navbar from './comp-context/Navbar';
 import ThemeToggle from './comp-context/ThemeToggle';
 import { AuthContextProvider } from './context/AuthContext';
 import { ThemeContextProvider } from './context/ThemeContext';
+import SongList from './func-comp-context/SongList';
 
 function App() {
 
@@ -15,13 +16,18 @@ function App() {
       <AutoComplete options={topFilms} sx={{width: 300}} renderInput={(params) => <TextField {...params} label="Movie" />} />
       <Loading />
       <Check /> */}
-      <ThemeContextProvider>
+
+
+      {/* <ThemeContextProvider>
         <AuthContextProvider>
           <Navbar />
           <BookList />
           <ThemeToggle />
         </AuthContextProvider>
-      </ThemeContextProvider>
+      </ThemeContextProvider> */}
+
+
+      <SongList />
     </div>
   );
 }
