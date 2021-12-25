@@ -1,30 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-import YoutubeForm from './components/YoutubeForm';
-import OldYoutube from './components/OldYoutub';
-import FormikYoutube from './components/FormikYoutube';
-import Button from '@mui/material/Button'
-import SaveIcon from '@mui/icons-material/Save'
-import AutoComplete from '@mui/material/Autocomplete'
-import TextField from '@mui/material/TextField'
-import Loading from './components/loading'
-import Check from './components/check';
 
 function App() {
-
-  function handleClick() {
-    
-  }
 
   return (
     <div className="App">
       {/* <YoutubeForm /> */}
       {/* <OldYoutube /> */}
       {/* <FormikYoutube /> */}
-      <Button variant="outlined" startIcon={<SaveIcon />}>Save</Button>
+      {/* <Button variant="outlined" startIcon={<SaveIcon />}>Save</Button>
       <AutoComplete options={topFilms} sx={{width: 300}} renderInput={(params) => <TextField {...params} label="Movie" />} />
       <Loading />
-      <Check />
+      <Check /> */}
     </div>
   );
 }
