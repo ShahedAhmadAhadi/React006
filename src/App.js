@@ -1,4 +1,6 @@
-import './App.css';
+import BookList from './comp-context/BookList';
+import Navbar from './comp-context/Navbar';
+import { ThemeContextProvider } from './context/ThemeContext';
 
 function App() {
 
@@ -11,6 +13,10 @@ function App() {
       <AutoComplete options={topFilms} sx={{width: 300}} renderInput={(params) => <TextField {...params} label="Movie" />} />
       <Loading />
       <Check /> */}
+      <ThemeContextProvider>
+        <Navbar />
+        <BookList />
+      </ThemeContextProvider>
     </div>
   );
 }
