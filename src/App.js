@@ -10,6 +10,7 @@ import BookLists from './hook-context/BookLists';
 import NavBar from './hook-context/NavBar';
 import Nav from './booklist/components/Navbar';
 import Books from './booklist/components/BookList'
+import BookForm from './booklist/components/BookForm';
 
 function App() {
 
@@ -51,6 +52,7 @@ function App() {
       <BookListContextProvider>
         <Nav />
         <Books />
+        <BookForm />
       </BookListContextProvider>
     </div>
   );
