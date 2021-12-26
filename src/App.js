@@ -2,6 +2,7 @@ import BookList from './comp-context/BookList';
 import Navbar from './comp-context/Navbar';
 import ThemeToggle from './comp-context/ThemeToggle';
 import { AuthContextProvider } from './context/AuthContext';
+import BookContextProvider from './context/BookContext';
 import { ThemeContextProvider } from './context/ThemeContext';
 import SongList from './func-comp-context/SongList';
 import BookLists from './hook-context/BookLists';
@@ -34,7 +35,9 @@ function App() {
       <ThemeContextProvider>
         <AuthContextProvider>
           <NavBar />
-          <BookLists />
+          <BookContextProvider>
+            <BookLists />
+          </BookContextProvider>
           <ThemeToggle />
         </AuthContextProvider>
       </ThemeContextProvider>
