@@ -4,6 +4,7 @@ import ThemeToggle from './comp-context/ThemeToggle';
 import { AuthContextProvider } from './context/AuthContext';
 import { ThemeContextProvider } from './context/ThemeContext';
 import SongList from './func-comp-context/SongList';
+import BookLists from './hook-context/BookLists';
 
 function App() {
 
@@ -27,7 +28,10 @@ function App() {
       </ThemeContextProvider> */}
 
 
-      <SongList />
+      {/* <SongList /> */}
+
+
+      <BookLists />
     </div>
   );
 }
