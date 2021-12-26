@@ -5,6 +5,7 @@ import { AuthContextProvider } from './context/AuthContext';
 import { ThemeContextProvider } from './context/ThemeContext';
 import SongList from './func-comp-context/SongList';
 import BookLists from './hook-context/BookLists';
+import NavBar from './hook-context/NavBar';
 
 function App() {
 
@@ -30,8 +31,13 @@ function App() {
 
       {/* <SongList /> */}
 
-
-      <BookLists />
+      <ThemeContextProvider>
+        <AuthContextProvider>
+          <NavBar />
+          <BookLists />
+          <ThemeToggle />
+        </AuthContextProvider>
+      </ThemeContextProvider>
     </div>
   );
 }
